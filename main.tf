@@ -1,17 +1,10 @@
 #Configure GCP provider
 
-provider "google" {
-  project     = "playground-s-11-935db860"
-  credentials = file("CREDENTIALS_FILE2.json")
-  region      = "europe-west1"
-  zone        = "europe-west1-d"
-}
-
 
 # Create VPC
 
 resource "google_compute_network" "vpc_network" {
-  project                 = "playground-s-11-935db860"
+  project                 = "<your project-id>"
   name                    = "ttt-vpc"
   auto_create_subnetworks = true
 }
