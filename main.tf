@@ -3,8 +3,8 @@
 provider "google" {
   project     = "playground-s-11-935db860"
   credentials = file("CREDENTIALS_FILE2.json")
-  region      = "us-central1"
-  zone        = "us-central1-c"
+  region      = "europe-west1"
+  zone        = "europe-west1-d"
 }
 
 
@@ -21,7 +21,7 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "default" {
   name         = "ttt-vm"
   machine_type = "f1-micro"
-  zone         = "us-central1-c"
+  zone         = "europe-west1-d"
 
   boot_disk {
     initialize_params {
