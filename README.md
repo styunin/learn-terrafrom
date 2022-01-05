@@ -1,5 +1,5 @@
 # learn-terrafrom
-Learn terraform-GCP via ACG
+How do I learn terraform-GCP via ACG
 
 
 1. Generate private key for an existing service account "Compute Engine default service account"
