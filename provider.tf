@@ -1,4 +1,4 @@
-   #Configure GCP provider
+#Configure GCP provider
 
 provider "google" {
   project     = "<your project-id>" 
