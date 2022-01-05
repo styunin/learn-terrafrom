@@ -1,4 +1,4 @@
 # use dufferent variables
 variable region {
-  default = ""
+  default = "europe-west1"
 }
