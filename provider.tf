@@ -1,3 +1,5 @@
+   #Configure GCP provider
+
 provider "google" {
   project     = "<your project-id>" 
   credentials = file("<key>.json")
