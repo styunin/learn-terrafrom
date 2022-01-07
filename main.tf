@@ -6,6 +6,12 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = true
 }
 
+# Create storage bucket
+resource "google_storage_bucket" "ttt-bucket" {
+  name          = "ttt-bucket-07012022"
+  location      = "EUROPE-WEST4"
+
+
 # Create vm instancce
 
 resource "google_compute_instance" "default" {
