@@ -1,7 +1,7 @@
 # Create VPC
 
 resource "google_compute_network" "vpc_network" {
-  project                 = "<your_project>"
+  project                 = var.project
   name                    = "ttt-vpc"
   auto_create_subnetworks = true
 }
@@ -9,7 +9,7 @@ resource "google_compute_network" "vpc_network" {
 # Create storage bucket
 resource "google_storage_bucket" "ttt-bucket" {
   name     = "ttt-bucket-07012022"
-  location = "EUROPE-WEST4"
+  location = var.region
 }
 
 # Create vm instancce
@@ -17,7 +17,7 @@ resource "google_storage_bucket" "ttt-bucket" {
 resource "google_compute_instance" "default" {
   name         = "ttt-vm"
   machine_type = "f1-micro"
-  zone         = "europe-west4-c"
+  zone         = var.zone
 
   boot_disk {
     initialize_params {
