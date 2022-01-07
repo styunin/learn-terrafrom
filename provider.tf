@@ -1,8 +1,8 @@
 #Configure GCP provider
 
 provider "google" {
-  project     = "<your project-id>" 
-  credentials = file("<key>.json")
-  region      = var.region          # see variable.tf
-  zone        = "europe-west1-d"
+  project     = "playground-s-11-b8ed5eb4"
+  credentials = file("key.json")
+  region      = var.region # see variable.tf
+  zone        = var.zone   # see variable.tf
 }
