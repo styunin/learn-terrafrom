@@ -1,3 +1,9 @@
+# generate random_id
+resource "random_id" "suffix" {
+  byte_length = 5
+}
+
+
 # Create VPC
 
 resource "google_compute_network" "vpc_network" {
@@ -8,14 +14,15 @@ resource "google_compute_network" "vpc_network" {
 
 # Create storage bucket
 resource "google_storage_bucket" "ttt-bucket" {
-  name     = "ttt-bucket-07012022"
+  name     = "ttt-bucket-20220110-${random_id.suffix.hex}"
   location = var.region
 }
 
 # Create vm instancce
 
 resource "google_compute_instance" "default" {
-  name         = "ttt-vm"
+  count        = 3
+  name         = "ttt-vm-${count.index + 1}"
   machine_type = "f1-micro"
   zone         = var.zone
 
@@ -33,8 +40,3 @@ resource "google_compute_instance" "default" {
   }
 }
 
-# Get the IP of the vm
-
-output "ip" {
-  value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
-}
