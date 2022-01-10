@@ -6,8 +6,3 @@ How do I learn terraform-GCP via ACG
 2. Get the key from previous step and store it in the folder for terrafrom
 3. Populate provider.tf, main.tf files and update project-id, resource names, etc.
 
-# Notes:
-
-an example to create multiple instances with different names:
-count = 3
-name = "my-vm${count.index + 1}"
