@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "project" {
-  default = "playground-s-11-b8ed5eb4"
+  default = "<your_project>"
 }
 
 variable "zone" {
