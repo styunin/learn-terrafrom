@@ -26,6 +26,14 @@ resource "google_compute_instance" "default" {
   machine_type = "f1-micro"
   zone         = var.zone
 
+  metadata_startup_script = <<EOF
+  sudo apt-get update 
+  sudo apt-get install -y nginx 
+  sudo systemctl enable nginx 
+  sudo systemctl start nginx 
+  echo '<!doctype html><html><body><h1>Hello from Terraform on GCP!</h1></body></html>' > /var/www/html/index.nginx-debian.html
+  EOF
+  
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-9"
