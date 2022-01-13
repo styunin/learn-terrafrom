@@ -41,7 +41,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "default"
+    network = google_compute_network.vpc_network.self_link # linking vpc to the VM's network
 
     access_config {
     }
