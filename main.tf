@@ -41,10 +41,9 @@ resource "google_compute_firewall" "rules" {
 }
 
 # Create storage bucket
-resource "google_storage_bucket" "ttt-bucket" {
-  name     = "ttt-bucket-20220110-${random_id.suffix.hex}"
-  location = var.region
-}
+module "bucket" {
+    source = "./modules/bucket"
+    region = var.region
 
 # Create vm instancce
 
