@@ -43,7 +43,7 @@ resource "google_compute_firewall" "rules" {
 # Create storage bucket
 module "bucket" {
     source = "./modules/bucket"
-    region = var.region
+}
 
 # Create vm instancce
 
