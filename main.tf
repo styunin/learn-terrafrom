@@ -1,8 +1,3 @@
-# generate random_id
-resource "random_id" "suffix" {
-  byte_length = 5
-}
-
 
 # Create VPC
 
