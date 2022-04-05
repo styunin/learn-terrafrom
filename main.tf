@@ -33,6 +33,9 @@ resource "google_compute_firewall" "rules" {
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["web"]
 
+  allow {
+    protocol = "icmp"
+    }
 }
 
 # Create storage bucket
